@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I like video games</title>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 20px;">
+        <h1>random gaming video at random moment in the video</h1>
+        <p>expect some nasty farts and calming voices</p>
+
+        <h4>this tool is better if you turn Autoplay in your browser to "Allow Audio and Video"</h4>
+
+        <div style="margin: 20px;">
+            <input type="text" id="channelInput" placeholder="Type channel handle or channel ID (URLs are allowed too)" style="padding: 10px; width: 360px;" autocomplete="off">
+            <button type="button" id="goButton">Go</button>
+        </div>
+
+        <div style="margin: 20px;">
+            <button type="button" id="optionsButton" aria-expanded="false" aria-controls="optionsBox">Options</button>
+        </div>
+
+        <div id="optionsBox" style="display: none; margin: 20px auto; text-align: center;">
+            <div style="margin: 10px;">
+                <input type="checkbox" id="searchOnlySimilar">
+                <label for="searchOnlySimilar">Search only similar</label>
+            </div>
+
+            <div style="margin: 10px;">
+                <button type="button" id="randomByCluster"  data-mode="cluster"  aria-pressed="false">Get random by cluster</button>
+                <button type="button" id="randomByDistance" data-mode="distance" aria-pressed="false">Get random by distance</button>
+                <button type="button" id="randomInChannel"  data-mode="channel"  aria-pressed="true">Get random in channel</button>
+            </div>
+
+            <div style="margin: 10px;">
+                <button type="button" id="semantic" data-map="semantic" aria-pressed="true">Semantic</button>
+                <button type="button" id="style" data-map="style" aria-pressed="false">Style</button>
+            </div>
+
+            <div id="distanceOptions" style="margin: 10px; display: none;">
+                <label for="distanceRange">Number of similar channels:</label>
+                <input type="range" id="distanceRange" min="1" max="100" value="10">
+                <input type="number" id="distanceValue" value="10" min="1" max="100" style="width: 60px;">
+            </div>
+
+            <div style="margin: 10px;">
+                <input type="radio" id="equalContribution" name="contribution" value="equal" checked>
+                <label for="equalContribution">Every channel contributes equally</label>
+            </div>
+
+            <div style="margin: 10px;">
+                <input type="radio" id="unequalContribution" name="contribution" value="unequal">
+                <label for="unequalContribution">Every channel does not contribute equally</label>
+            </div>
+
+            <div style="margin: 10px;">
+                <label for="dateFrom">Date Filter:</label>
+                <input type="date" id="dateFrom" value="2020-01-01">
+                <label for="dateTo">to</label>
+                <input type="date" id="dateTo">
+            </div>
+
+            <div style="margin: 10px;">
+                <label for="durationFrom">Duration Filter:</label>
+                <input type="text" id="durationFrom" placeholder="hh:mm:ss">
+                <label for="durationTo">to</label>
+                <input type="text" id="durationTo" placeholder="hh:mm:ss">
+            </div>
+
+            <div style="margin: 10px;">
+                <input type="radio" id="openInNewTab" name="linkTarget" value="new" checked>
+                <label for="openInNewTab">Open links in new tab</label>
+            </div>
+
+            <div style="margin: 10px;">
+                <input type="radio" id="openInCurrentTab" name="linkTarget" value="current">
+                <label for="openInCurrentTab">Open links in current tab</label>
+            </div>
+
+        </div>
+
+        <h5>↓↓↓fun preset options↓↓↓</h5>
+        <div style="margin: 10px;">
+            <button type="button" id="commonSettings">🌋💨🧑‍🔬🐉🎩🛹🪕🦎💣🙃🥁actually lowkenuinely why the hell is this channel the hyperfixation after running corpus ling on gaming youtuber corpus🌋💨🧑‍🔬🐉🎩🛹🪕🦎💣🙃🥁</button>
+        </div>
+        <div style="margin: 10px;">
+            <button type="button" id="commonSettings2">😎☕really cool youtubers in this preset they building things and chill😎☕</button>
+        </div>
+        <div style="margin: 10px;">
+            <button type="button" id="commonSettings3">🃏🫟🔮they play really cool games🔮🫟🃏</button>
+        </div>
+        <div style="margin: 10px;">
+            <button type="button" id="commonSettings4">⛐🚗🚙🏎️🚓cars, cars, and more cars🚗🚙🏎️🚓⛐</button>
+        </div>
+        <div style="margin: 10px;">
+            <button type="button" id="commonSettings5">war</button>
+        </div>
+        <div style="margin: 10px;">
+            <button type="button" id="commonSettings6">preset using the style feature cuz why not and I like this channel so lets use it as the target channel (🗣️🔥 really really cool commentary 🔥✍️)</button>
+        </div>
+        <p style="font-size: 8px;">ps</p>
+        <p style="font-size: 8px;">Searching by semantic will get you content that feels similar to the channel you're searching for.</p>
+        <p style="font-size: 8px;">Searching by style will get you content that has a similar commentary style to it.</p>
+
+        <div id="result" style="margin: 20px;"></div>
+    </div>
+
+    <script src="gameologist.js"></script>
+</body>
+</html>
