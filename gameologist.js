@@ -916,8 +916,9 @@ window.gameologistSearch = async function (options) {
         cheek('dateTo').value = '';
         cheek('durationFrom').value = '12:00';
         cheek('durationTo').value = '';
-        window.funniMode('cluster');
+        window.funniMode('distance');
         window.memeMap('semantic');
+        tootRange('80');
         buttCheckUI();
         cheekCheck();
         memeBtns();
